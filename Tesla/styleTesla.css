@@ -322,6 +322,7 @@ body {
 	position: relative;
 	margin: 0;
 	padding: 0;
+	height: 900px;
 }
 .carFrame {
 	position: relative;
@@ -514,11 +515,14 @@ body {
 	font-size: 16px;
 	display: inline-block;
 	padding: 0 0 0 5px;
+	font-family: MontserratBold;
+	color: #FFD22E;
 }
 .school {
 	font-size: 9px;
 	float: right;
 	margin: -2px 1px 0 0;
+	font-family: MontserratBold;
 }
 
 
