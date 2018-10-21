@@ -795,12 +795,13 @@ body {
 	margin: -16px 0 0 0;
 	background-color: #E51937;
 	color: #FFFFFF;
+	text-align: center;
 }
 .future__model_tittle {
 	display: none;
 }
 .future__tittle {
-	margin: 0px 33px 9px 26px;
+	margin: 15px 33px 15px 26px;
 	padding-top: 18px;
 	font-size: 30px;
 	font-family: MontserratSemiBold;
@@ -808,12 +809,14 @@ body {
 	text-align: center;
 }
 .future__mainText {
-	margin: 0 auto 34px auto;
+	margin: 0 auto 0 auto;
 	line-height: 19px;
 	font-size: 15px;
 	font-family: MontserratMedium;
 	text-align: justify;
 	width: 85%;
+	padding-bottom: 34px;
+	border-color: #E51937;
 }
 .future__mainText br {
 	display: none;
@@ -923,10 +926,11 @@ body {
 	margin: 0;
 	background-color: #E51937;
 	color: white;
+	text-align: center;
 }
 .security__tittle {
 	width: 75%;
-	margin: 0 auto 11px auto;
+	margin: 15px auto 15px auto;
 	padding-top: 18px;
 	font-size:30px;
 	line-height:37px;
