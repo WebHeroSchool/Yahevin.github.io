@@ -809,7 +809,7 @@ body {
 	text-align: center;
 }
 .future__mainText {
-	margin: 0 auto 0 auto;
+	margin: 0 33px 0 26px;
 	line-height: 19px;
 	font-size: 15px;
 	font-family: MontserratMedium;
@@ -939,7 +939,7 @@ body {
 }
 .security__text {
 	width: 85%;
-	margin: 0 auto 0 auto;
+	margin: 0 28px 0 31px;
 	font-size: 15px;
 	font-family: MontserratMedium;
 	padding-bottom: 30px;
