@@ -600,7 +600,7 @@ body {
 @media (max-width: 1023px) {
 body {
 	width: 100%;
-	min-width: 355px;
+	min-width: 375px;
 	margin: 0;
 }
 .navBar {
@@ -922,12 +922,13 @@ body {
 	color: white;
 }
 .security__tittle {
-	margin: 0px auto 11px auto;
+	margin: 0px 0 11px 0;
 	padding-top: 18px;
 	width: 350px;
 	font-size:30px;
 	line-height:37px;
 	font-family: MontserratSemiBold;
+	text-align: center;
 }
 .security__text {
 	margin: 0 28px 0 31px;
