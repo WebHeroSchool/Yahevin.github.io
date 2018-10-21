@@ -931,7 +931,7 @@ body {
 .security__tittle {
 	width: 75%;
 	margin: 0 auto 0 auto;
-	padding: 18px 0 11px 0;
+	padding-top: 18px;
 	font-size:30px;
 	line-height:37px;
 	font-family: MontserratSemiBold;
