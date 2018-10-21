@@ -930,10 +930,10 @@ body {
 }
 .security__tittle {
 	width: 75%;
-	margin: 0px 0px 11px 0px;
+	margin: 0px auto 11px auto;
 	padding-top: 18px;
-	font-size:30px;
-	line-height:37px;
+	font-size: 30px;
+	line-height: 37px;
 	font-family: MontserratSemiBold;
 	text-align: center;
 }
@@ -943,8 +943,8 @@ body {
 	font-size: 15px;
 	font-family: MontserratMedium;
 	padding-bottom: 30px;
-    background-color: #E51937;
-    text-align: justify;
+    	background-color: #E51937;
+    	text-align: justify;
 }
 .security__item {
 	display: none;
