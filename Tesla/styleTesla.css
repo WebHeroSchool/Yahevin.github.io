@@ -81,6 +81,7 @@ body {
 	text-align: center;
 	height: 450px;
 	margin-bottom: 38px;
+	overflow: hidden;
 }
 .teslaModelS__mainImg {
 	display: inline-block;
@@ -647,6 +648,7 @@ body {
 	position: relative;
 	margin-bottom: 34px;
 	width: 100%;
+	overflow: hidden;
 }
 .teslaModelS__mainImg {
 	max-width: 95.2%;
@@ -828,6 +830,7 @@ body {
 	width: 375px;
 	height: 294px;
 	margin: 0 auto 0 auto;
+	overflow: hidden;
 }
 .carFrame br {
 	display: none;
