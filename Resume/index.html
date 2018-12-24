@@ -8,16 +8,20 @@
 	<link rel="stylesheet" href="slide.css">
 </head>
 <body>
-	<section class="slideMenu">
-	<nav id="menu">
+
+	
+	 <nav id="menu">
       <h2>Menu</h2>
     </nav>
 
     <main id="panel">
+      <header>
         <button class="toggle-button">☰</button>
         <h2>Panel</h2>
+      </header>
     </main>
-	</section>
+
+
 	<section class="sideMenu">
 		<div class="sideMenu__pageBlock" id="sideMenu__page"> 
 			<span class="sideMenu__pageBlock_number" id="sideMenu__pageBlock">1 </span>
@@ -254,17 +258,18 @@
 	<script type="text/javascript" src="scrypt.js"></script>
 	<script type="text/javascript" src="octokit-rest.min.js"></script>
 	<script src="slideout.min.js"></script>
-<script>
-  var slideout = new Slideout({
-    'panel': document.getElementById('panel'),
-    'menu': document.getElementById('menu'),
-    'padding': 256,
-    'tolerance': 70
-  });
+  <script>
+      var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70
+      });
 
-  document.querySelector('.toggle-button').addEventListener('click', function() {
-    slideout.toggle();
-  });
-</script>
+      // Toggle button
+      document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
+      });
+    </script>
 </body>
 </html>
