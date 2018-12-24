@@ -210,6 +210,19 @@ body {
 	height: 900px;
 	overflow: hiddden;
 }
+.scroll {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200px;
+	height: 900px;
+	background-color: blue;
+	z-index: 2000;
+	opacity: 0;
+}
+.scroll #hover {
+	opacity: 1;
+}
 .future__imgBox {
 	display: block;
 }
@@ -467,6 +480,10 @@ body {
 }
 
 /*Левая колонка*/
+#p2 {
+	scroll-behavior: smooth;
+}
+
 .security__aside {
 	position: absolute;
 	top:0;
