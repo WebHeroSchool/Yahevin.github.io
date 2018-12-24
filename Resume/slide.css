@@ -10,8 +10,9 @@ body {
   bottom: 0;
   right: 0;
   z-index: 0;
-  width: 100%;
-  background-color: green;
+  width: 100%; 
+  width: 256px;
+  min-height: 100vh;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   display: none;
@@ -21,6 +22,8 @@ body {
   position: relative;
   z-index: 1;
   will-change: transform;
+  background-color: green;
+  min-height: 100vh;
 }
 
 .slideout-open,
