@@ -4,9 +4,15 @@ var sideMenu = {
     works: document.getElementById('works__button'),
     skills: document.getElementById('skills__button'),
     repository: document.getElementById('repository__button'),
+
     works2: document.getElementById('works__button2'),
     skills2: document.getElementById('skills__button2'),
     repository2: document.getElementById('repository__button2'),
+
+    works3: document.getElementById('works__button3'),
+    skills3: document.getElementById('skills__button3'),
+    repository3: document.getElementById('repository__button3'),
+    
     about: document.getElementById('about__button'),
     burger: document.getElementById('sideMenu__burger'),
     sideBar: document.getElementById('sideMenu__sideBar'),
@@ -14,10 +20,22 @@ var sideMenu = {
     burgSnippet1: document.getElementById('sideMenu__burger_snippet1'),
     burgSnippet2: document.getElementById('sideMenu__burger_snippet2'),
     burgSnippet3: document.getElementById('sideMenu__burger_snippet3'),
+    swipeMenu: document.getElementById('swipeMenu'),
+    swipeBar: document.getElementById('swipeBar'),
+    closeButton: document.getElementById('swipeMenu__closeButton'),
     tapChek: 0,
       
 
     makeButtons: function () {
+        this.works3.onclick = function () {          
+            sideMenu.viewSwipeMenu (4, sideMenu.scrollToWork);       
+        }
+        this.skills3.onclick = function () {          
+            sideMenu.viewSwipeMenu (4, sideMenu.scrollToSkills);       
+        }
+        this.repository3.onclick = function () {          
+            sideMenu.viewSwipeMenu (4, sideMenu.scrollToRepository);       
+        }
         this.works2.onclick = this.scrollToWork;
         this.skills2.onclick = this.scrollToSkills;
         this.repository2.onclick = this.scrollToRepository; 
@@ -26,11 +44,52 @@ var sideMenu = {
         this.repository.onclick = this.scrollToRepository; 
         this.about.onclick = this.scrollToTop; 
         this.burger.onclick = this.viewSideBar;
+        this.closeButton.onclick = function () {          
+            sideMenu.viewSwipeMenu (4);
+        }
     },
+
+    viewSwipeMenu: function (direction,callback) {
+        if (direction == 2) { 
+            sideMenu.swipeMenu.classList.add('swipeMenu__open');
+            let SMR = sideMenu.swipeMenu.style.right;
+            if (SMR == '') {SMR = '-100vw'};        
+            (function open () {        
+                SMR = SMR.slice(0,SMR.lastIndexOf('v'));
+                if (SMR < 0) {
+                    SMR = (+SMR + 5* Math.sin(0.1 + 3*SMR/-100))+'vw';
+                    sideMenu.swipeMenu.style.right = SMR;   
+                    timer = setTimeout(open,5);
+                }
+                else {
+                    clearTimeout(timer);
+                    sideMenu.swipeMenu.style.right = '0vw';
+                    sideMenu.swipeBar.style.left = 0; 
+                }              
+            }())                                
+        }
+        if (direction == 4) {    
+            (function close () { 
+                SMR = sideMenu.swipeMenu.style.right;
+                SMR = SMR.slice(0,SMR.lastIndexOf('v'));
+                if (SMR > -100) {
+                    SMR = (+SMR - 5* Math.sin(0.1 + 3*SMR/-100))+'vw';
+                    sideMenu.swipeMenu.style.right = SMR;
+                    timer = setTimeout(close,5);
+                }
+                else {
+                    clearTimeout(timer);
+                    sideMenu.swipeMenu.classList.remove('swipeMenu__open');
+                    sideMenu.swipeMenu.style.right = "-100vw";
+                    sideMenu.swipeBar.style.right = 0;
+                    sideMenu.swipeBar.style.left = 'inherit';
+                    callback ();
+                }              
+            }())
+        }
+    },
+
     viewSideBar: function () {    
-        // let burger = sideMenu.burger;
-        // let sideBar = sideMenu.sideBar;
-        // let pageBlock = sideMenu.pageBlock;
         let SBR = sideMenu.sideBar.style.right;
         let BR = sideMenu.burger.style.right;
         let PB = sideMenu.pageBlock.style.right;
@@ -154,7 +213,7 @@ var sideMenu = {
         function go () {
             if (scroll < (anchor - 5)) {    
                 window.scrollTo(0,scroll)
-                scroll = scroll + 15 * Math.sin(0.1 + 3*scroll/anchor);
+                scroll = scroll + 15 * Math.sin(0.1 + 3*scroll/anchor);  
                 timer = setTimeout(go,5);
             }
             else if (scroll > (anchor + 5)) {

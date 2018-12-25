@@ -2,25 +2,54 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 	<title>WebHero2018</title>
 	<link rel="stylesheet" href="build/css/style.css">
 	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="slide.css">
+
+
 </head>
 <body>
-
-	
-	 <nav id="menu">
-      <h2>Menu</h2>
-    </nav>
-
-    <main id="panel">
-      <header>
-        <button class="toggle-button">☰</button>
-        <h2>Panel</h2>
-      </header>
-    </main>
-
+	<article class="swipeBar" id="swipeBar"></article>
+	<article class="swipeMenu" id="swipeMenu">
+		<section class="swipeMenu__header">
+			<div class="header__RA">
+				//RA
+			</div>
+			<div class="header__buttons_lang">
+				En/Ru
+			</div>
+			<div class="swipeMenu__header_closeButton" id="swipeMenu__closeButton">			
+			</div>
+		</section>
+		<section class="swipeMenu__center">
+			<span class="swipeMenu__center_item" id="works__button3">Works</span>
+			<span class="swipeMenu__center_item" id="skills__button3">Skills</span>
+			<span class="swipeMenu__center_item" id="repository__button3">Git Repository</span>
+		</section>
+		<section class="swipeMenu__contact">
+			<span class="swipeMenu__contact_title">
+				Contact
+			</span>
+			<span class="swipeMenu__contact_item">
+				Yahevin15@gmail.com
+			</span>
+			<span class="swipeMenu__contact_item">
+				+7 (917) 916-28-74
+			</span>
+		</section>
+		<nav class="swipeMenu__socNets">
+				<a href="https://vk.com/drunken_hunter" class="footer__socNets_item">
+					<div class="footer__socNets_vk"></div>
+				</a>
+				<a href="https://github.com/Yahevin" class="footer__socNets_item">
+					<div class="footer__socNets_gitHub"></div>
+				</a>
+				<a href="" class="footer__socNets_item">
+					<div class="footer__socNets_in"></div>
+				</a>
+			</nav>
+	</article>
 
 	<section class="sideMenu">
 		<div class="sideMenu__pageBlock" id="sideMenu__page"> 
@@ -257,19 +286,19 @@
 	</footer>
 	<script type="text/javascript" src="scrypt.js"></script>
 	<script type="text/javascript" src="octokit-rest.min.js"></script>
-	<script src="slideout.min.js"></script>
-  <script>
-      var slideout = new Slideout({
-        'panel': document.getElementById('panel'),
-        'menu': document.getElementById('menu'),
-        'padding': 256,
-        'tolerance': 70
-      });
-
-      // Toggle button
-      document.querySelector('.toggle-button').addEventListener('click', function() {
-        slideout.toggle();
-      });
-    </script>
+	<script type="text/javascript" src="hammer.js"></script>
+	<script type="text/javascript">
+		var myElement = document.getElementById('swipeBar');
+		var myOptions = {
+		    event: 'swipe',
+		    pointers: 1,
+		    velocity: 0.3,
+		    threshold: 20
+		}
+		var hammertime = new Hammer(myElement, myOptions);
+		hammertime.on('swipe', function (ev) {
+			sideMenu.viewSwipeMenu(ev.direction)
+		});
+	</script>
 </body>
 </html>

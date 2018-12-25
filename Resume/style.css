@@ -5,6 +5,94 @@ body {
 	height: 100%;
 	overflow-x: hidden;
 }
+.swipeBar {
+	position: absolute;
+	width: 80px;
+	height: 100%;
+	bottom: 0;
+	right: 0;
+	z-index: 4;
+	@media (min-width: 1081px) {
+		display: none;
+	}
+}
+.swipeMenu {
+	z-index: 3;
+	position: fixed;
+	padding: 0 7.5vw 0 7.5vw;
+	right: -100vw;
+	top: 0;
+	height: 100vh;
+	display: none;
+	width: 85%;
+	margin: 0 auto;
+	font-family: MontserratSemiBold;
+	font-size: 20px;
+	color: #0094FF;
+	&__open {
+		overflow-y: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: white;
+	}
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&_closeButton {
+			background-image: url('imgs/Vector.png');
+			background-size: cover;
+			repeat: no-repeat;
+			width: 27px;
+			height: 27px;
+			margin-left: 20px;
+		}
+	}
+	&__center {
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		height: 25vh;
+		margin: 6vh 0;
+		&_item {
+			text-align: center;
+
+		}
+	}
+	&__contact {
+		display: block;
+		margin: 0 auto;
+		&_title {
+			text-align: center;
+			display: block;
+			
+		}
+		&_item {
+			text-align: center;
+			display: block;
+			color: #ADADB9;
+			font-family: MontserratMedium;
+		}
+	}
+	&__socNets {
+		display: flex;
+		justify-content: space-between;
+		width: 280px;
+		margin: 0 auto;
+	}
+
+
+
+
+
+	@media (min-width: 1081px) {
+		display: none;
+	}
+}
+
+
 .sideMenu {
 	position: sticky;
 	top: 20px;
@@ -359,12 +447,18 @@ body {
 			display: block;
 			font-family: MontserratSemiBold;
 			font-size: 1vw;
+			@media (max-width: 1081px) {
+		    	font-size: 4vw;
+			}
 		}
 		&_text {
 			margin: 25px 40px;
 			display: block;
 			font-family: MontserratRegular;
 			font-size: 1vw;
+			@media (max-width: 1081px) {
+		    	font-size: 2vw;
+			}
 
 		}
 	}
@@ -377,9 +471,9 @@ body {
     background-repeat: no-repeat;
     box-shadow: 0 0 11px -3px black;
     @media (max-width: 1081px) {
-		display: block;
+		display: flex;
 		width: 100%;
-		height: 45.5vw;
+		height: 46.5vw;
 		min-height: 0px;
 	}
 }
